@@ -1,0 +1,1 @@
+		<p>copyright&copy; soab technology@2023</p>
