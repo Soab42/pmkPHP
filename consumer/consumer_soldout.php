@@ -18,7 +18,7 @@ include("../nav/navbar.php");
             Consumer Dashboard
         </h1>
     </div>
-    <div class='p-2 flex flex-col gap-2 w-full '>
+    <div class='p-2 flex flex-col gap-2 '>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET" class='flex gap-2 p-1'>
             <select name="branch" class='px-2 w-36 text-center bg-green-300 rounded-md'>
                 <option value="select branch" class='px-1 w-36 text-center cursor-pointer rounded-md'>
@@ -27,12 +27,23 @@ include("../nav/navbar.php");
                 <?php $branch->getBranchNames(); ?>
 
             </select>
+            <select name="distributor" class='px-2 w-4 text-center bg-green-300 rounded-md'>
+                <option value="select distributor" class='px-1 w-36 text-center  cursor-pointer rounded-md'>
+                    Select distributor</option>
+                <?php $branch->getDistributorNames(); ?>
 
+            </select>
+            <select name="type" class='px-2 w-44 text-center bg-green-300 rounded-md'>
+                <option value="select type" class='px-1 w-36 text-center  cursor-pointer rounded-md'> Select Products
+                    Type</option>
+                <?php $branch->getProductsType(); ?>
+
+            </select>
             <button class='btn w-36'>Search</button>
         </form>
-        <div class="h-[90vh] overflow-scroll pb-56 w-full">
+        <div class="h-[90vh] overflow-scroll pb-56">
             <?php
-            echo $branch->getBillPaidRegister();
+            echo $branch->getSoldOut();
             // $branch->getBranchNames();
             ?>
         </div>

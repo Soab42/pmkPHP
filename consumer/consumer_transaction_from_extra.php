@@ -33,20 +33,12 @@ include("../nav/navbar.php");
                 <?php $branch->getDistributorNames(); ?>
 
             </select>
-            <select name="bill" class='px-2 w-36 text-center bg-green-300 rounded-md'>
-                <option value="select Bill" class='px-1 w-36 text-center  cursor-pointer rounded-md'>
-                    Select Bill</option>
-                <option value="Paid" class='px-1 w-36 text-center  cursor-pointer rounded-md'>
-                    Paid</option>
-                <option value="Unpaid" class='px-1 w-36 text-center  cursor-pointer rounded-md'>
-                    Unpaid</option>
 
-            </select>
             <button class='btn w-36'>Search</button>
         </form>
         <div class="h-[90vh] overflow-scroll pb-56">
             <?php
-            echo $branch->getOrderList();
+            echo $branch->getProductListExtra();
             // $branch->getBranchNames();
             ?>
         </div>

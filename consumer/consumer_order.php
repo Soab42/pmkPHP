@@ -11,7 +11,7 @@ include("../utils/script.php");
 include("../nav/navbar.php");
 
 ?>
-<div class="main m-0 p-0 overflow-hidden h-[90vh]">
+<div class="main m-0 p-0 overflow-hidden h-[90vh] w-full">
 
     <div class="bg-green-300 w-full h-16 text-bold text-2xl text-center flex justify-center items-center">
         <h1>
@@ -31,6 +31,12 @@ include("../nav/navbar.php");
                 <option value="select distributor" class='px-1 w-36 text-center  cursor-pointer rounded-md'>
                     Select distributor</option>
                 <?php $branch->getDistributorNames(); ?>
+
+            </select>
+            <select name="type" class='px-2 w-36 text-center bg-green-300 rounded-md'>
+                <option value="select type" class='px-1 w-36 text-center  cursor-pointer rounded-md'>
+                    Select Products Type</option>
+                <?php $branch->getProductsType(); ?>
 
             </select>
             <select name="bill" class='px-2 w-36 text-center bg-green-300 rounded-md'>

@@ -11,7 +11,7 @@ include("../utils/script.php");
 include("../nav/navbar.php");
 
 ?>
-<div class="main m-0 p-0 ">
+<div class="main m-0 p-0 w-full ">
 
     <div class="bg-green-300 w-full h-16 text-bold text-2xl text-center flex justify-center items-center">
         <h1>

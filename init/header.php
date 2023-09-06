@@ -5,8 +5,13 @@ $currentURL = $_SERVER['REQUEST_URI'];
 // Extract the part of the URL after 'pmk/'
 $titleSegment = substr($currentURL, strpos($currentURL, 'pmk/') + 4);
 
+
+
+
 // Remove the ".php" extension if present
 $titleSegment = str_replace('.php', '', $titleSegment);
+// Remove any query string if present
+$titleSegment = preg_replace('/\?.*/', '', $titleSegment);
 
 // If the title segment is "dashboard", set the page title to "Dashboard" only
 if ($titleSegment === 'dashboard') {
@@ -27,6 +32,7 @@ if ($titleSegment === 'dashboard') {
 
 <head>
     <title><?php echo $pageTitle; ?></title>
+    <!-- <?php include("./utils/script.php"); ?> -->
     <?php include("../utils/script.php"); ?>
 </head>
 

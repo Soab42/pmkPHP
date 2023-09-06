@@ -11,14 +11,14 @@ include("../utils/script.php");
 include("../nav/navbar.php");
 
 ?>
-<div class="main m-0 p-0 overflow-hidden h-[90vh]">
+<div class="main m-0 p-0 overflow-hidden h-[90vh] w-full">
 
     <div class="bg-green-300 w-full h-16 text-bold text-2xl text-center flex justify-center items-center">
         <h1>
             Consumer Dashboard
         </h1>
     </div>
-    <div class='p-2 flex flex-col gap-2 '>
+    <div class='p-2 flex flex-col gap-2 w-full'>
         <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="GET" class='flex gap-2 p-1'>
             <select name="branch" class='px-2 w-36 text-center bg-green-300 rounded-md'>
                 <option value="select branch" class='px-1 w-36 text-center cursor-pointer rounded-md'>
@@ -36,7 +36,7 @@ include("../nav/navbar.php");
 
             <button class='btn w-36'>Search</button>
         </form>
-        <div class="h-[90vh] overflow-scroll pb-56">
+        <div class="h-[90vh] overflow-scroll pb-56 w-full">
             <?php
             echo $branch->getBillPaidReport2();
             // $branch->getBranchNames();
