@@ -39,14 +39,16 @@ include("../nav/navbar.php");
                 <?php $branch->getProductsType(); ?>
 
             </select>
-            <select name="bill" class='px-2 w-36 text-center bg-green-300 rounded-md'>
-                <option value="select Bill" class='px-1 w-36 text-center  cursor-pointer rounded-md'>
-                    Select Bill</option>
-                <option value="Paid" class='px-1 w-36 text-center  cursor-pointer rounded-md'>
-                    Paid</option>
-                <option value="Unpaid" class='px-1 w-36 text-center  cursor-pointer rounded-md'>
-                    Unpaid</option>
 
+            <select name="bill" class='px-2 w-44 text-center bg-green-300 rounded-md'>
+                <option value="select bill" class='px-1 w-36 text-center  cursor-pointer rounded-md'>
+                    Select product bill</option>
+                <option value="Paid" <?php if (isset($_GET['bill']) && $_GET['bill'] == 'Paid') echo 'selected'; ?>
+                    class='px-1 w-36 text-center  cursor-pointer rounded-md'>
+                    Paid</option>
+                <option value="Unpaid" <?php if (isset($_GET['bill']) && $_GET['bill'] == 'Unpaid') echo 'selected'; ?>
+                    class='px-1 w-36 text-center  cursor-pointer rounded-md'>
+                    Unpaid</option>
             </select>
             <button class='btn w-36'>Search</button>
         </form>

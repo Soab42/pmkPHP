@@ -27,7 +27,7 @@ include("../nav/navbar.php");
                 <?php $branch->getBranchNames(); ?>
 
             </select>
-            <select name="distributor" class='px-2 w-4 text-center bg-green-300 rounded-md'>
+            <select name="distributor" class='px-2 w-44 text-center bg-green-300 rounded-md'>
                 <option value="select distributor" class='px-1 w-36 text-center  cursor-pointer rounded-md'>
                     Select distributor</option>
                 <?php $branch->getDistributorNames(); ?>
@@ -39,6 +39,9 @@ include("../nav/navbar.php");
                 <?php $branch->getProductsType(); ?>
 
             </select>
+            <input type="date" name="from" id="from" class='px-2 w-44 text-center bg-green-300 rounded-md'>
+
+            <input type="date" name="to" id="to" class='px-2 w-44 text-center bg-green-300 rounded-md'>
             <button class='btn w-36'>Search</button>
         </form>
         <div class="h-[90vh] overflow-scroll pb-56">

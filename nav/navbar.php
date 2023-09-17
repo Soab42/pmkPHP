@@ -7,7 +7,7 @@
                         <div class="icon flex h-16 justify-center items-center text-3xl w-16  " id='homedown'>
                             <span class="material-icons scale-150 rotate-180 text-sky-500">web_stories</span>
                         </div>
-                        <ul class=" flex flex-col  p-2 gap-2 duration-700 animateRight xl:w-[5rem] " id="ulList">
+                        <ul class=" flex flex-col  p-2 gap-2 duration-700 animateRight xl:w-[12rem] " id="ulList">
 
                             <?php $branch->getTableName() ?>
 

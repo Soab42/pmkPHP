@@ -94,7 +94,7 @@ class Branch extends dbConfig
 
         // Update with your actual table name
         $result = mysqli_query($this->dbConnect, $query);
-        print_r($result);
+        // print_r($result);
 
         $branchNames = array();
         while ($row = mysqli_fetch_assoc($result)) {
@@ -177,7 +177,7 @@ class Branch extends dbConfig
                 }
             }
             if (!empty($productStatus)) {
-                if ($productStatus !== 'select Bill') {
+                if ($productStatus !== 'select bill') {
                     $sql .= " AND `Bill Pay` = '$productStatus'";
                 }
             }
@@ -206,10 +206,10 @@ class Branch extends dbConfig
             return;
         }
 
-        echo "<table class='border-2 border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
+        echo "<table class='border border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
         echo "<tr class=' p-1 sticky top-0 bg-green-300'>";
         foreach (array_keys($data[0]) as $columnName) {
-            echo "<th class='border-2 border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
+            echo "<th class='border border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
         }
         // echo "</tr>";
 
@@ -223,9 +223,9 @@ class Branch extends dbConfig
         $totalPaid = 0;
 
         foreach ($data as $value) {
-            echo "<tr class='border-2 border-black px-1 p-1'>";
+            echo "<tr class='border border-black px-1 p-1'>";
             foreach ($value as $key => $val) {
-                echo "<td class='border-2 border-black px-1 p-1 text-xs'>$val</td>";
+                echo "<td class='border border-black px-1 p-1 text-xs'>$val</td>";
                 if ($key === 'Order Quantity') {
                     $totalOrderQuantity += $val;
                 } elseif ($key === 'Shiped Quantity') {
@@ -254,16 +254,16 @@ class Branch extends dbConfig
         }
 
         // Display the total row
-        echo "<tr class='border-2 border-black px-1 p-1'>";
-        echo "<th colspan='8' class='border-2 border-black px-1 p-1 text-xs'>Total (Total Paid = $countPaidQuantity, Total Unpaid = $countUnPaidQuantity )</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalOrderQuantity</th>";
+        echo "<tr class='border border-black px-1 p-1'>";
+        echo "<th colspan='8' class='border border-black px-1 p-1 text-xs'>Total (Total Paid = $countPaidQuantity, Total Unpaid = $countUnPaidQuantity )</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalOrderQuantity</th>";
 
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'> $totalShippedQuantity</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'> $totalShippedQuantity</th>";
 
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'> $totalReceivedQuantity</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'> $totalPurchase</th>";
-        echo "<th colspan='3' class='border-2 border-black px-1 p-1 text-xs'> </th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'> $totalPaid</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'> $totalReceivedQuantity</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'> $totalPurchase</th>";
+        echo "<th colspan='3' class='border border-black px-1 p-1 text-xs'> </th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'> $totalPaid</th>";
         // echo "</tr>";
         echo "</table>";
     }
@@ -308,10 +308,10 @@ class Branch extends dbConfig
             return;
         }
 
-        echo "<table class=' px-1-collapse  border-2 border-black px-1-gray-300 text-center  overflow-scroll relative'>";
+        echo "<table class=' px-1-collapse  border border-black px-1-gray-300 text-center  overflow-scroll relative'>";
         echo "<tr class=' p-1 sticky top-0 bg-teal-500'>";
         foreach (array_keys($data[0]) as $columnName) {
-            echo "<th class=' px-1-2 border-2 border-black px-1-black  p-1 text-xs capitalize'>$columnName</th>";
+            echo "<th class=' px-1-2 border border-black px-1-black  p-1 text-xs capitalize'>$columnName</th>";
         }
         // echo "</tr>";
 
@@ -320,9 +320,9 @@ class Branch extends dbConfig
         $totalPaid = 0;
 
         foreach ($data as $value) {
-            echo "<tr class='border-2 border-black px-1 p-1'>";
+            echo "<tr class='border border-black px-1 p-1'>";
             foreach ($value as $key => $val) {
-                echo "<td class='border-2 border-black px-1 p-1 text-xs'>$val</td>";
+                echo "<td class='border border-black px-1 p-1 text-xs'>$val</td>";
                 if ($key === 'Paid_Amount') {
                     $totalPaid += $val;
                 }
@@ -331,9 +331,9 @@ class Branch extends dbConfig
         }
 
         // Display the total row
-        echo "<tr class='border-2 border-black px-1 p-1'>";
-        echo "<th colspan='8' class='border-2 border-black px-1 p-1 text-xs'>Total</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalPaid</th>";
+        echo "<tr class='border border-black px-1 p-1'>";
+        echo "<th colspan='8' class='border border-black px-1 p-1 text-xs'>Total</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalPaid</th>";
         // echo "</tr>";
         echo "</table>";
     }
@@ -362,10 +362,10 @@ class Branch extends dbConfig
             return;
         }
 
-        echo "<table class='border-2 border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
+        echo "<table class='border border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
         echo "<tr class=' p-1 sticky top-0 bg-teal-500'>";
         foreach (array_keys($data[0]) as $columnName) {
-            echo "<th class='border-2 border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
+            echo "<th class='border border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
         }
         // echo "</tr>";
 
@@ -379,9 +379,9 @@ class Branch extends dbConfig
         $totalVariance = 0;
 
         foreach ($data as $value) {
-            echo "<tr class='border-2 border-black px-1 p-1'>";
+            echo "<tr class='border border-black px-1 p-1'>";
             foreach ($value as $key => $val) {
-                echo "<td class='border-2 border-black px-1 p-1 text-xs'>$val</td>";
+                echo "<td class='border border-black px-1 p-1 text-xs'>$val</td>";
                 if ($key === 'Purchase Price') {
                     $totalPurchase += $val;
                 }
@@ -411,16 +411,16 @@ class Branch extends dbConfig
         }
 
         // Display the total row
-        echo "<tr class='border-2 border-black px-1 p-1'>";
-        echo "<th colspan='2' class='border-2 border-black px-1 p-1 text-xs'>Total</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalPurchase</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalTransfer</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalHoPayment</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalMIS</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalBalance</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalTotalAIS</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalHo</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalVariance</th>";
+        echo "<tr class='border border-black px-1 p-1'>";
+        echo "<th colspan='2' class='border border-black px-1 p-1 text-xs'>Total</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalPurchase</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalTransfer</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalHoPayment</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalMIS</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalBalance</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalTotalAIS</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalHo</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalVariance</th>";
         // echo "</tr>";
         echo "</table>";
     }
@@ -472,10 +472,10 @@ class Branch extends dbConfig
             return;
         }
 
-        echo "<table class='border-2 border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
+        echo "<table class='border border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
         echo "<tr class=' p-1 sticky top-0 bg-teal-500'>";
         foreach (array_keys($data[0]) as $columnName) {
-            echo "<th class='border-2 border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
+            echo "<th class='border border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
         }
         // echo "</tr>";
 
@@ -489,9 +489,9 @@ class Branch extends dbConfig
 
 
         foreach ($data as $value) {
-            echo "<tr class='border-2 border-black px-1 p-1'>";
+            echo "<tr class='border border-black px-1 p-1'>";
             foreach ($value as $key => $val) {
-                echo "<td class='border-2 border-black px-1 p-1 text-xs'>$val</td>";
+                echo "<td class='border border-black px-1 p-1 text-xs'>$val</td>";
                 if ($key === 'Shiped Quantity') {
                     $totalShippedQuantity += $val;
                 } elseif ($key === 'Recieved Quantity') {
@@ -510,16 +510,16 @@ class Branch extends dbConfig
         }
 
         // Display the total row
-        echo "<tr class='border-2 border-black px-1 p-1'>";
-        echo "<th colspan='4' class='border-2 border-black px-1 p-1 text-xs'>Total</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalShippedQuantity</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalReceivedQuantity</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalNonReceivedQuantity</th>";
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$purchasePrice</th>";
+        echo "<tr class='border border-black px-1 p-1'>";
+        echo "<th colspan='4' class='border border-black px-1 p-1 text-xs'>Total</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalShippedQuantity</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalReceivedQuantity</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalNonReceivedQuantity</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$purchasePrice</th>";
 
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'> $paidAmount</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'> $paidAmount</th>";
 
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'> $dueAmount</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'> $dueAmount</th>";
         // echo "</tr>";
         echo "</table>";
     }
@@ -576,10 +576,10 @@ class Branch extends dbConfig
             return;
         }
 
-        echo "<table class='border-2 border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
+        echo "<table class='border border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
         echo "<tr class=' p-1 sticky top-0 bg-teal-500'>";
         foreach (array_keys($data[0]) as $columnName) {
-            echo "<th class='border-2 border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
+            echo "<th class='border border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
         }
         // echo "</tr>";
 
@@ -589,9 +589,9 @@ class Branch extends dbConfig
         $totalReceivedQuantity = 0;
 
         foreach ($data as $value) {
-            echo "<tr class='border-2 border-black px-1 p-1'>";
+            echo "<tr class='border border-black px-1 p-1'>";
             foreach ($value as $key => $val) {
-                echo "<td class='border-2 border-black px-1 p-1 text-xs'>$val</td>";
+                echo "<td class='border border-black px-1 p-1 text-xs'>$val</td>";
                 if ($key === 'Order Quantity') {
                     $totalOrderQuantity += $val;
                 } elseif ($key === 'Shiped Quantity') {
@@ -668,10 +668,10 @@ class Branch extends dbConfig
             return;
         }
 
-        echo "<table class='border-2 border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
+        echo "<table class='border border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
         echo "<tr class=' p-1 sticky top-0 bg-[lightseagreen] text-slate-700 shadow-lg'>";
         foreach (array_keys($data[0]) as $columnName) {
-            echo "<th class='border-2 border-black px-1   p-1 text-xs capitalize'>$columnName</th>";
+            echo "<th class='border border-black px-1   p-1 text-xs capitalize'>$columnName</th>";
         }
         // echo "</tr>";
         $countStockIn = 0;
@@ -683,9 +683,9 @@ class Branch extends dbConfig
         $totalStaffCommission = 0;
 
         foreach ($data as $value) {
-            echo "<tr class='border-2 border-black px-1 p-1'>";
+            echo "<tr class='border border-black px-1 p-1'>";
             foreach ($value as $key => $val) {
-                echo "<td class='border-2 border-black px-1 p-1 text-xs'>$val</td>";
+                echo "<td class='border border-black px-1 p-1 text-xs'>$val</td>";
                 if ($key === 'Product Purchase Price') {
                     $totalPurchasePrice += $val;
                 } elseif ($key === 'Product Salable Price') {
@@ -706,16 +706,16 @@ class Branch extends dbConfig
         }
 
         // Display the total row
-        echo "<tr class='border-2 border-black px-1 p-1 text-slate-700 shadow-lg bg-[lightseagreen]'>";
+        echo "<tr class='border border-black px-1 p-1 text-slate-700 shadow-lg bg-[lightseagreen]'>";
 
-        echo "<th colspan='11' class='border-2 border-black px-1 text-xs p-2'>Total   (Total Product = $totalProduct , Total SoldOut= $countSoldOut, Total  StockIn = $countStockIn ,Total Transferred = $countTransferred)</th>";
+        echo "<th colspan='11' class='border border-black px-1 text-xs p-2'>Total   (Total Product = $totalProduct , Total SoldOut= $countSoldOut, Total  StockIn = $countStockIn ,Total Transferred = $countTransferred)</th>";
 
 
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalPurchasePrice</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalPurchasePrice</th>";
 
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'> $totalSaleablePrice</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'> $totalSaleablePrice</th>";
 
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'> $totalStaffCommission</th><th colspan='5'></th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'> $totalStaffCommission</th><th colspan='5'></th>";
         // echo "</tr>";
         echo "</table>";
     }
@@ -768,10 +768,10 @@ class Branch extends dbConfig
             return;
         }
 
-        echo "<table class='border-2 border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
+        echo "<table class='border border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
         echo "<tr class=' p-1 sticky top-0 bg-teal-500'>";
         foreach (array_keys($data[0]) as $columnName) {
-            echo "<th class='border-2 border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
+            echo "<th class='border border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
         }
         // echo "</tr>";
 
@@ -781,9 +781,9 @@ class Branch extends dbConfig
         $totalReceivedQuantity = 0;
 
         foreach ($data as $value) {
-            echo "<tr class='border-2 border-black px-1 p-1'>";
+            echo "<tr class='border border-black px-1 p-1'>";
             foreach ($value as $key => $val) {
-                echo "<td class='border-2 border-black px-1 p-1 text-xs'>$val</td>";
+                echo "<td class='border border-black px-1 p-1 text-xs'>$val</td>";
                 if ($key === 'Order Quantity') {
                     $totalOrderQuantity += $val;
                 } elseif ($key === 'Shiped Quantity') {
@@ -796,16 +796,16 @@ class Branch extends dbConfig
         }
 
         // Display the total row
-        echo "<tr class='border-2 border-black px-1 p-1'>";
+        echo "<tr class='border border-black px-1 p-1'>";
 
-        echo "<th colspan='9' class='border-2 border-black px-1 p-1 text-xs'>Total   </th>";
+        echo "<th colspan='9' class='border border-black px-1 p-1 text-xs'>Total   </th>";
 
 
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalOrderQuantity</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalOrderQuantity</th>";
 
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'> $totalShippedQuantity</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'> $totalShippedQuantity</th>";
 
-        echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'> $totalReceivedQuantity</th>";
+        echo "<th colspan='' class='border border-black px-1 p-1 text-xs'> $totalReceivedQuantity</th>";
         // echo "</tr>";
         echo "</table>";
     }
@@ -834,17 +834,17 @@ class Branch extends dbConfig
             return;
         }
 
-        echo "<table class='border-2 border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
+        echo "<table class='border border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
         echo "<tr class=' p-1 sticky top-0 bg-teal-500'>";
         foreach (array_keys($data[0]) as $columnName) {
-            echo "<th class='border-2 border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
+            echo "<th class='border border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
         }
         // echo "</tr>";
 
         foreach ($data as $value) {
-            echo "<tr class='border-2 border-black px-1 p-1'>";
+            echo "<tr class='border border-black px-1 p-1'>";
             foreach ($value as $key => $val) {
-                echo "<td class='border-2 border-black px-1 p-1 text-xs'>$val</td>";
+                echo "<td class='border border-black px-1 p-1 text-xs'>$val</td>";
             }
             // echo "</tr>";
         }
@@ -877,17 +877,17 @@ class Branch extends dbConfig
             return;
         }
 
-        echo "<table class='border-2 border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
+        echo "<table class='border border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
         echo "<tr class=' p-1 sticky top-0 bg-teal-500'>";
         foreach (array_keys($data[0]) as $columnName) {
-            echo "<th class='border-2 border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
+            echo "<th class='border border-black px-1-2 px-1-black  p-1 text-xs capitalize'>$columnName</th>";
         }
         // echo "</tr>";
 
         foreach ($data as $value) {
-            echo "<tr class='border-2 border-black px-1 p-1'>";
+            echo "<tr class='border border-black px-1 p-1'>";
             foreach ($value as $key => $val) {
-                echo "<td class='border-2 border-black px-1 p-1 text-xs'>$val</td>";
+                echo "<td class='border border-black px-1 p-1 text-xs'>$val</td>";
             }
             // echo "</tr>";
         }
@@ -955,10 +955,10 @@ class Branch extends dbConfig
                 return;
             }
 
-            echo "<table class='border-2 border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
+            echo "<table class='border border-black px-1-collapse  px-1-gray-300 text-center  overflow-scroll relative'>";
             echo "<tr class=' p-1 sticky top-0 bg-[lightseagreen] text-slate-700 shadow-lg'>";
             foreach (array_keys($data[0]) as $columnName) {
-                echo "<th class='border-2 border-black px-1   p-1 text-xs capitalize'>$columnName</th>";
+                echo "<th class='border border-black px-1   p-1 text-xs capitalize'>$columnName</th>";
             }
             // echo "</tr>";
 
@@ -969,9 +969,9 @@ class Branch extends dbConfig
             $netProfit = 0;
 
             foreach ($data as $value) {
-                echo "<tr class='border-2 border-black px-1 p-1'>";
+                echo "<tr class='border border-black px-1 p-1'>";
                 foreach ($value as $key => $val) {
-                    echo "<td class='border-2 border-black px-1 p-1 text-xs'>$val</td>";
+                    echo "<td class='border border-black px-1 p-1 text-xs'>$val</td>";
                     if ($key === 'Purchase Price') {
                         $totalPurchasePrice += $val;
                     } elseif ($key === 'Salable Price') {
@@ -985,331 +985,44 @@ class Branch extends dbConfig
             }
 
             // Display the total row
-            echo "<tr class='border-2 border-black px-1 p-1 text-slate-700 shadow-lg bg-[lightseagreen]'>";
+            echo "<tr class='border border-black px-1 p-1 text-slate-700 shadow-lg bg-[lightseagreen]'>";
 
-            echo "<th colspan='10' class='border-2 border-black px-1 text-xs p-2'>Total   (Total Product = $totalProduct )</th>";
-
-
-            echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'> $totalSaleablePrice</th>";
-            echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'>$totalPurchasePrice</th>";
+            echo "<th colspan='10' class='border border-black px-1 text-xs p-2'>Total   (Total Product = $totalProduct )</th>";
 
 
-            echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'> $totalStaffCommission</th>";
-            echo "<th colspan='' class='border-2 border-black px-1 p-1 text-xs'> Net Profit : $netProfit</th><th colspan='5'></th>";
+            echo "<th colspan='' class='border border-black px-1 p-1 text-xs'> $totalSaleablePrice</th>";
+            echo "<th colspan='' class='border border-black px-1 p-1 text-xs'>$totalPurchasePrice</th>";
+
+
+            echo "<th colspan='' class='border border-black px-1 p-1 text-xs'> $totalStaffCommission</th>";
+            echo "<th colspan='' class='border border-black px-1 p-1 text-xs'> Net Profit : $netProfit</th><th colspan='5'></th>";
             // echo "</tr>";
             echo "</table>";
         }
     }
-    public function test2()
+
+    public function reportTable()
     {
+        $selectedBranch = isset($_GET['branch']) ? mysqli_real_escape_string($this->dbConnect, $_GET['branch']) : '';
+
+        $distributorName = isset($_GET['distributor']) ? mysqli_real_escape_string($this->dbConnect, $_GET['distributor']) : 'Singer';
+        $from = isset($_GET['from']) ? mysqli_real_escape_string($this->dbConnect, $_GET['from']) : '2019-01-01';
+        $to = isset($_GET['to']) ? mysqli_real_escape_string($this->dbConnect, $_GET['to']) : date('Y-m-d');
 
 
-        // initiaL SQL
-        $sql = "SELECT DISTINCT `Branch name` FROM `consumer_product`;
-        ";
-        // echo $sql . "<br>";
-        $result = mysqli_query($this->dbConnect, $sql);
-
-        if (!$result) {
-            // Handle database query error
-            return;
+        if (empty($from)) {
+            $from = '2019-01-01';
+        }
+        if (empty($to)) {
+            $to = date('Y-m-d');
         }
 
-        $data = array();
-        while ($row = mysqli_fetch_assoc($result)) {
-            $data[] = $row;
-        }
-
-        if (empty($data)) {
-            echo "No records found.";
-            return;
-        }
-        // print_r($data);
-        //totalCount
-        $totalTvCount = 0;
-        $totalAcCount = 0;
-        $totalFridgeCount = 0;
-        $totalSwingCount = 0;
-        $totalWashCount = 0;
-        $totalOthersCount = 0;
-
-        //Total purchase price
-        $totalTvPrice = 0;
-        $totalAcPrice = 0;
-        $totalFridgePrice = 0;
-        $totalSwingPrice = 0;
-        $totalWashPrice = 0;
-        $totalOthersPrice = 0;
-        echo "<table>
-        <tbody>
-            <tr class='row'>
-                <th class='border-2 border-black px-1' rowspan='2'>sl</th>
-                <th class='border-2 border-black px-1'  rowspan='2'>Branch Name</th>
-                <th class='border-2 border-black px-1'  rowspan='2'>Products Details</th>
-                <th class='border-2 border-black px-1' colspan ='2'>Cumilitive Recived</th>
-                <th class='border-2 border-black px-1' colspan ='5'>Current Month sold</th>
-                <th class='border-2 border-black px-1' colspan ='5'>Cumilitive sold</th>
-                <th class='border-2 border-black px-1' colspan ='2'>InStock</th>
-                <th class='border-2 border-black px-1' colspan ='2'>Paid To Ho</th>
-                <th class='border-2 border-black px-1' rowspan='2'>Remarks</th>
-       
-            </tr>
-            <tr>
-                <th class='border-2 border-black px-1'>Num of product</th>
-                <th class='border-2 border-black px-1'>pruchase Value</th>
-                <th class='border-2 border-black px-1'>Num of product</th>
-                <th class='border-2 border-black px-1'>Soldout Value</th>
-                <th class='border-2 border-black px-1'>Purchase Value</th>
-                <th class='border-2 border-black px-1'>Staff Incentive</th>
-                <th class='border-2 border-black px-1'>Net Profit</th>
-                <th class='border-2 border-black px-1'>Num of product</th>
-                <th class='border-2 border-black px-1'>Soldout Value</th>
-                <th class='border-2 border-black px-1'>Purchase Value</th>
-                <th class='border-2 border-black px-1'>Staff Incentive</th>
-                <th class='border-2 border-black px-1'>Net Profit</th>
-                <th class='border-2 border-black px-1'>Number Of Product</th>
-                <th class='border-2 border-black px-1'>Amount</th>
-                <th class='border-2 border-black px-1'>Number Of Product</th>
-                <th class='border-2 border-black px-1'>Amount</th>
-            </tr>";
-        foreach ($data as $key => $value) {
-            $branchName = $value["Branch name"];
-            echo "<tr>
-                <td class='border-2 border-black px-1' rowspan='7'>" . $key + 1 . "</td>
-                <td class='border-2 border-black px-1' rowspan='7'>" . $branchName . "</td>";
+        // echo 'from ' . $from;
+        // echo '<br>';
+        // echo 'to ' . $to;
 
 
-            $sqlParBranch = "SELECT cp.`Product Name`,
-            COUNT(cp.`Product Name`) as `Product_Count`,
-            SUM(cp.`Product Purchase Price`) as `Purchase_Value`,
-            COUNT(cs.`Product Name`) as `soldCount`,
-            SUM(cs.`Salable Price`) as `soldPrice`,
-            SUM(cs.`Purchase Price`) as `PurchasePrice`,
-            SUM(cs.`Staff Comission`) as `StaffComission`,
-            SUM(cs.`Salable Price` - cs.`Purchase Price` - cs.`Staff Comission`) as `Net Profit`,
-            COUNT(cp.`Product Name`) - COUNT(cs.`Product Name`) as `InStockCount`,
-            SUM(cp.`Product Purchase Price`) - SUM(cs.`Purchase Price`) as `InStockValue`
-            FROM `consumer_product` cp
-            LEFT JOIN `consumer_soldout` cs
-            ON cp.`Recieved ID` = cs.`Product ID`
-            WHERE cp.`Branch name` = 'Badda'
-            GROUP BY cp.`Product Name`;
-                ";
-            $result2 = mysqli_query($this->dbConnect, $sqlParBranch);
-            if (!$result2) {
-                // Handle database query error
-                return;
-            }
 
-            $data2 = array();
-            while ($row = mysqli_fetch_assoc($result2)) {
-                $data2[] = $row;
-            }
-
-            if (empty($data2)) {
-                echo "No records found.";
-                return;
-            }
-            // print_r($data2);
-            // product Count
-            $tvCount = 0;
-            $acCount = 0;
-            $fridgeCount = 0;
-            $swingCount = 0;
-            $washCount = 0;
-            $othersCount = 0;
-
-            //purchase price
-            $tvPrice = 0;
-            $acPrice = 0;
-            $fridgePrice = 0;
-            $swingPrice = 0;
-            $washPrice = 0;
-            $othersPrice = 0;
-
-            // Cumilitive sold 
-
-            $soldTvCount = 0;
-            $soldAcCount = 0;
-            $soldFridgeCount = 0;
-            $soldSwingCount = 0;
-            $soldWashCount = 0;
-            $soldOthersCount = 0;
-
-            //Saleable price
-            $soldtvPrice = 0;
-            $soldacPrice = 0;
-            $soldfridgePrice = 0;
-            $soldswingPrice = 0;
-            $soldwashPrice = 0;
-            $soldothersPrice = 0;
-
-            //purchase price
-            $soldpurchasetvPrice = 0;
-            $soldpurchaseacPrice = 0;
-            $soldpurchasefridgePrice = 0;
-            $soldpurchaseswingPrice = 0;
-            $soldpurchasewashPrice = 0;
-            $soldpurchaseothersPrice = 0;
-
-            //purchase Comissions
-            $soldtvComission = 0;
-            $soldacComission = 0;
-            $soldfridgeComission = 0;
-            $soldswingComission = 0;
-            $soldwashComission = 0;
-            $soldothersComission = 0;
-
-            //Net Profit
-            $tvNetProfit = 0;
-            $acNetProfit = 0;
-            $fridgeNetProfit = 0;
-            $swingNetProfit = 0;
-            $washNetProfit = 0;
-            $othersNetProfit = 0;
-
-            //stock product Count
-            $tvCountStock = 0;
-            $acCountStock = 0;
-            $fridgeCountStock = 0;
-            $swingCountStock = 0;
-            $washCountStock = 0;
-            $othersCountStock = 0;
-
-            //Stock purchase price
-            $tvPriceStock = 0;
-            $acPriceStock = 0;
-            $fridgePriceStock = 0;
-            $swingPriceStock = 0;
-            $washPriceStock = 0;
-            $othersPriceStock = 0;
-
-
-            foreach ($data2 as $row) {
-                if ($row['Product Name'] == 'Smart TV') {
-                    $tvCount += $row['Product_Count'];
-                    $tvPrice += $row['Purchase_Value'];
-                    $totalTvCount += $row['Product_Count'];
-                    $totalTvPrice += $row['Purchase_Value'];
-                }
-                if ($row['Product Name'] == 'LED TV') {
-                    $tvCount += $row['Product_Count'];
-                    $tvPrice += $row['Purchase_Value'];
-                    $totalTvCount += $row['Product_Count'];
-                    $totalTvPrice += $row['Purchase_Value'];
-                }
-                if ($row['Product Name'] == 'Refrigerator') {
-                    $fridgeCount = $row['Product_Count'];
-                    $fridgePrice = $row['Purchase_Value'];
-                    $totalFridgeCount += $row['Product_Count'];
-                    $totalFridgePrice += $row['Purchase_Value'];
-                }
-                if ($row['Product Name'] == 'Microwave Oven') {
-                    $othersCount += $row['Product_Count'];
-                    $othersPrice += $row['Purchase_Value'];
-                    $totalOthersCount += $row['Product_Count'];
-                    $totalOthersPrice += $row['Purchase_Value'];
-                }
-                if ($row['Product Name'] == 'Sewing Machine') {
-                    $swingCount = $row['Product_Count'];
-                    $swingPrice =   $row['Purchase_Value'];
-                    $totalSwingCount += $row['Product_Count'];
-                    $totalSwingPrice +=   $row['Purchase_Value'];
-                }
-                if ($row['Product Name'] == 'Washing Machine') {
-                    $washCount = $row['Product_Count'];
-                    $washPrice = $row['Purchase_Value'];
-                    $totalWashCount += $row['Product_Count'];
-                    $totalWashPrice += $row['Purchase_Value'];
-                }
-                if ($row['Product Name'] == 'Air Conditioner') {
-                    $acCount = $row['Product_Count'];
-                    $acPrice = $row['Purchase_Value'];
-                    $totalAcCount += $row['Product_Count'];
-                    $totalAcPrice += $row['Purchase_Value'];
-                }
-            }
-
-
-            echo "
-             <tr>     
-            <td class='border-2 border-black px-1'>TV</td>
-            <td class='border-2 border-black px-1'>$tvCount</td>
-            <td class='border-2 border-black px-1'>$tvPrice</td>
-            <td class='border border-black px-1' colspan='5'></td>
-            
-        </tr>
-            </tr>
-            <tr>     
-                <td class='border-2 border-black px-1'>Fridge</td>
-                <td class='border-2 border-black px-1'>$fridgeCount</td>
-                <td class='border-2 border-black px-1'>$fridgePrice</td>
-                <td class='border border-black px-1' colspan='5'></td>
-            </tr>
-            <tr>     
-                <td class='border-2 border-black px-1'>AC</td>
-                <td class='border-2 border-black px-1'>$acCount</td>
-                <td class='border-2 border-black px-1'>$acPrice</td>      <td class='border border-black px-1' colspan='5'></td>         
-            </tr>
-            <tr>     
-                <td class='border-2 border-black px-1'>Washing machine</td>
-                <td class='border-2 border-black px-1'>$washCount</td>
-                <td class='border-2 border-black px-1'>$washPrice</td>
-   <td class='border border-black px-1' colspan='5'></td>
-            </tr>
-            <tr>     
-                <td class='border-2 border-black px-1'>Swing Machine</td>
-                <td class='border-2 border-black px-1'>$swingCount</td>
-                <td class='border-2 border-black px-1'>$swingPrice</td>
-<td class='border border-black px-1' colspan='5'></td>
-            </tr>
-            <tr>     
-                <td class='border-2 border-black px-1'>Others</td>
-                <td class='border-2 border-black px-1'>$othersCount</td>
-                <td class='border-2 border-black px-1'>$othersPrice</td>
-<td class='border border-black px-1' colspan='5'></td>
-                </tr>";
-        }
-        echo " 
-                <td class='border-2 border-black px-1' rowspan='7' colspan='2'>Grand Total</td><tr>     
-        <td class='border-2 border-black px-1'>TV</td>
-        <td class='border-2 border-black px-1'>$totalTvCount</td>
-        <td class='border-2 border-black px-1'>$totalTvPrice</td>
-        <td class='border border-black px-1' colspan='5'></td>
-        
-    </tr>
-        </tr>
-        <tr>     
-            <td class='border-2 border-black px-1'>Fridge</td>
-            <td class='border-2 border-black px-1'>$totalFridgeCount</td>
-            <td class='border-2 border-black px-1'>$totalFridgePrice</td><td class='border border-black px-1' colspan='5'></td>
-        </tr>
-        <tr>     
-            <td class='border-2 border-black px-1'>AC</td>
-            <td class='border-2 border-black px-1'>$totalAcCount</td>
-            <td class='border-2 border-black px-1'>$totalAcPrice</td>  <td class='border border-black px-1' colspan='5'></td>             
-        </tr>
-        <tr>     
-            <td class='border-2 border-black px-1'>Washing machine</td>
-            <td class='border-2 border-black px-1'>$totalWashCount</td>
-            <td class='border-2 border-black px-1'>$totalWashPrice</td>
-<td class='border border-black px-1' colspan='5'></td>
-        </tr>
-        <tr>     
-            <td class='border-2 border-black px-1'>Swing Machine</td>
-            <td class='border-2 border-black px-1'>$totalSwingCount</td>
-            <td class='border-2 border-black px-1'>$totalSwingPrice</td>
-<td class='border border-black px-1' colspan='5'></td>
-        </tr>
-        <tr>     
-            <td class='border-2 border-black px-1'>Others</td>
-            <td class='border-2 border-black px-1'>$totalOthersCount</td>
-            <td class='border-2 border-black px-1'>$totalOthersPrice</td><td class='border border-black px-1' colspan='5'></td>
-            </tr> </tbody>
-                 </table>";
-    }
-    public function test()
-    {
         // Define an array to store product data
         $products = [
             'TV' => ['Smart TV', 'LED TV'],
@@ -1317,65 +1030,103 @@ class Branch extends dbConfig
             'AC' => ['Air Conditioner'],
             'WashingMachine' => ['Washing Machine'],
             'SwingMachine' => ['Sewing Machine'],
-            'Others' => ['Microwave Oven', 'Rice Cooker']
+            'Others' => ['Microwave Oven', 'Rice Cooker'],
+
+
         ];
 
         // Initialize HTML for the table
-        $html = '<table class="report">';
-        // ... (Table header HTML here)
-        $html .= " <tbody>
-        <tr class='row'>
-            <th class='border-2 border-black px-1' rowspan='2'>sl</th>
-            <th class='border-2 border-black px-1'  rowspan='2'>Branch Name</th>
-            <th class='border-2 border-black px-1'  rowspan='2'>Products Details</th>
-            <th class='border-2 border-black px-1' colspan ='2'>Cumilitive Recived</th>
-            <th class='border-2 border-black px-1' colspan ='5'>Current Month sold</th>
-            <th class='border-2 border-black px-1' colspan ='5'>Cumilitive sold</th>
-            <th class='border-2 border-black px-1' colspan ='2'>InStock</th>
-            <th class='border-2 border-black px-1' colspan ='2'>Paid To Ho</th>
-            <th class='border-2 border-black px-1' rowspan='2'>Remarks</th>
+        $html = '<table class="report" id="table-to-export">';
+        $html .= " <tbody class= 'relative'>
+        <tr class='row   '>
+            <th class='border border-black px-1' rowspan='2'>sl</th>
+            <th class='border border-black px-1'  rowspan='2'>Branch Name</th>
+            <th class='border border-black px-1'  rowspan='2'>Products Details</th>
+            <th class='border border-black px-1' colspan ='2'>Cumilitive Recived</th>
+            <th class='border border-black px-1' colspan ='5'>Current Month sold</th>
+            <th class='border border-black px-1' colspan ='5'>Cumilitive sold</th>
+            <th class='border border-black px-1' colspan ='2'>InStock</th>
+            <th class='border border-black px-1' colspan ='2'>Paid To Ho</th>
+            <th class='border border-black px-1' rowspan='2'>Remarks</th>
    
         </tr>
-        <tr>
-            <th class='border-2 border-black px-1'>Num of product</th>
-            <th class='border-2 border-black px-1'>pruchase Value</th>
-            <th class='border-2 border-black px-1'>Num of product</th>
-            <th class='border-2 border-black px-1'>Soldout Value</th>
-            <th class='border-2 border-black px-1'>Purchase Value</th>
-            <th class='border-2 border-black px-1'>Staff Incentive</th>
-            <th class='border-2 border-black px-1'>Net Profit</th>
-            <th class='border-2 border-black px-1'>Num of product</th>
-            <th class='border-2 border-black px-1'>Soldout Value</th>
-            <th class='border-2 border-black px-1'>Purchase Value</th>
-            <th class='border-2 border-black px-1'>Staff Incentive</th>
-            <th class='border-2 border-black px-1'>Net Profit</th>
-            <th class='border-2 border-black px-1'>Number Of Product</th>
-            <th class='border-2 border-black px-1'>Amount</th>
-            <th class='border-2 border-black px-1'>Number Of Product</th>
-            <th class='border-2 border-black px-1'>Amount</th>
+        <tr class=''>
+            <th class='border border-black px-1'>Num of product</th>
+            <th class='border border-black px-1'>pruchase Value</th>
+            <th class='border border-black px-1'>Num of product</th>
+            <th class='border border-black px-1'>Soldout Value</th>
+            <th class='border border-black px-1'>Purchase Value</th>
+            <th class='border border-black px-1'>Staff Incentive</th>
+            <th class='border border-black px-1'>Net Profit</th>
+            <th class='border border-black px-1'>Num of product</th>
+            <th class='border border-black px-1'>Soldout Value</th>
+            <th class='border border-black px-1'>Purchase Value</th>
+            <th class='border border-black px-1'>Staff Incentive</th>
+            <th class='border border-black px-1'>Net Profit</th>
+            <th class='border border-black px-1'>Number Of Product</th>
+            <th class='border border-black px-1'>Amount</th>
+            <th class='border border-black px-1'>Number Of Product</th>
+            <th class='border border-black px-1'>Amount</th>
         </tr>";
-        // Initialize totals arrays
-        // ... (Previous code)
+
 
         // Initialize totals arrays
         $totalCounts = [];
         $totalPrices = [];
+
+        $totalCmSalesCounts = [];
+        $totalCmSalesPrices = [];
+        $totalCmPurchasePrices = [];
+        $totalCmStaffCommissions = [];
+        $totalCmNetProfits = [];
+
         $totalSalesCounts = [];
         $totalSalesPrices = [];
         $totalPurchasePrices = [];
         $totalStaffCommissions = [];
         $totalNetProfits = [];
+
         $totalInStockCounts = [];
         $totalInStockValues = [];
+
         $totalPaidCounts = [];
         $totalPaidValues = [];
 
+        //grancd total count
+
+        $GrandTotalCounts = 0;
+        $GrandTotalPrices = 0;
+
+        $GrandTotalCmSalesCounts = 0;
+        $GrandTotalCmSalesPrices = 0;
+        $GrandTotalCmPurchasePrices = 0;
+        $GrandTotalCmStaffCommissions = 0;
+        $GrandTotalCmNetProfits = 0;
+
+        $GrandTotalSalesCounts = 0;
+        $GrandTotalSalesPrices = 0;
+        $GrandTotalPurchasePrices = 0;
+        $GrandTotalStaffCommissions = 0;
+        $GrandTotalNetProfits = 0;
+
+        $GrandTotalInStockCounts = 0;
+        $GrandTotalInStockValues = 0;
+
+        $GrandTotalPaidCounts = 0;
+        $GrandTotalPaidValues = 0;
+
         // Initialize branch data array
         $branchData = [];
-
+        $branchSubtotals = [];
         // Query the database to get branch names
-        $sql = "SELECT DISTINCT `Branch name` FROM `consumer_product`";
-        $result = mysqli_query($this->dbConnect, $sql);
+
+        if (!empty($selectedBranch) && $selectedBranch !== 'select branch') {
+            // If a specific branch is selected, filter the data for that branch
+            $branchSql = "SELECT DISTINCT `Branch name` FROM `consumer_product` WHERE `Branch name` = '$selectedBranch'";
+        } else {
+            $branchSql = "SELECT DISTINCT `Branch name` FROM `consumer_product`";
+        }
+        $result = mysqli_query($this->dbConnect, $branchSql);
 
         if (!$result) {
             // Handle database query error
@@ -1388,73 +1139,124 @@ class Branch extends dbConfig
             // Initialize branch-specific variables
             $branchCounts = [];
             $branchPrices = [];
+
+            $branchCmSalesCounts = [];
+            $branchCmSalesPrices = [];
+            $branchCmPurchasePrices = [];
+            $branchCmStaffCommissions = [];
+            $branchCmNetProfits = [];
+
             $branchSalesCounts = [];
             $branchSalesPrices = [];
             $branchPurchasePrices = [];
             $branchStaffCommissions = [];
             $branchNetProfits = [];
+
             $branchInStockCounts = [];
             $branchInStockValues = [];
+
             $branchPaidCounts = [];
             $branchPaidValues = [];
+
 
             // Loop through product categories
             foreach ($products as $category => $productNames) {
                 // Initialize category-specific variables
                 $categoryCount = 0;
                 $categoryPrice = 0;
+
+                $categoryCmSalesCount = 0;
+                $categoryCmSalesPrice = 0;
+                $categoryCmPurchasePrice = 0;
+                $categoryCmStaffComission = 0;
+                $categoryCmNetProfit = 0;
+
                 $categorySalesCount = 0;
                 $categorySalesPrice = 0;
                 $categoryPurchasePrice = 0;
                 $categoryStaffComission = 0;
                 $categoryNetProfit = 0;
+
                 $categoryInStockCount = 0;
                 $categoryInStockValue = 0;
+
                 $categoryPaidCount = 0;
                 $categoryPaidValue = 0;
 
                 // Loop through product names in the category
                 foreach ($productNames as $productName) {
                     // Execute SQL query to get product data for the branch and category
+
                     $sql = "SELECT
-                cp.`Product Name`,
-                COUNT(cp.`Product Name`) as `Product_Count`,
-                SUM(cp.`Product Purchase Price`) as `Purchase_Value`,
-                COUNT(cs.`Product Name`) as `SalesCount`,
-                SUM(cs.`Salable Price`) as `SalesPrice`,
-                SUM(cs.`Purchase Price`) as `PurchasePrice`,
-                SUM(cs.`Staff Comission`) as `StaffComission`,
-                SUM(cs.`Salable Price` - cs.`Purchase Price` - cs.`Staff Comission`) as `Net Profit`,
-                COUNT(cp.`Product Name`) - COUNT(cs.`Product Name`) as `InStockCount`,
-                SUM(cp.`Product Purchase Price`) - SUM(cs.`Purchase Price`) as `InStockValue`,
-                COALESCE(billPaid.totalPaidCount, 0) AS `totalPaidCount`,
-                COALESCE(billPaid.TotalPaidAmount, 0) AS `TotalPaidAmount`
-            FROM
-                `consumer_product` cp
-            LEFT JOIN
-                `consumer_soldout` cs ON cp.`Recieved ID` = cs.`Product ID`
-            LEFT JOIN
-                (
-                SELECT
-                    co.`Product Name`,
-                    co.`Branch name`,
-                    SUM(`co`.`Received Quantity`) AS totalPaidCount,
-                    SUM(bp.Paid_Amount) AS TotalPaidAmount
-                FROM
-                    `consumer_order` co
-                LEFT JOIN
-                    `consumer_bill_paid` bp ON co.`Order ID` = bp.`Order_Code`
-                     WHERE co.`Distributor Name`='Singer'
-                GROUP BY
-                    co.`Product Name`, co.`Branch name`
-                   
-                ) AS billPaid ON cp.`Branch name` = billPaid.`Branch name` AND cp.`Product Name` = billPaid.`Product Name`
-                WHERE cp.`Branch name` = '$branchName'
-                        AND cp.`Product Name` = '$productName' and cp.`Distributor Name`='Singer'";
+                    cp.`Product Name`,
+                    COUNT(cp.`Product Name`) as `Product_Count`,
+                    SUM(cp.`Product Purchase Price`) as `Purchase_Value`,
+                    COUNT(tms.`Product ID`) as `cmSalesCount`,
+                    SUM(tms.`Salable Price`) as `cmSalesPrice`,
+                    SUM(tms.`Purchase Price`) as `cmPurchasePrice`,
+                    SUM(tms.`Staff Comission`) as `cmStaffComission`,
+                    SUM(tms.`Salable Price` - tms.`Purchase Price` - tms.`Staff Comission`) as `cmNet Profit`,
+                    COUNT(cs.`Product Name`) as `SalesCount`,
+                    SUM(cs.`Salable Price`) as `SalesPrice`,
+                    SUM(cs.`Purchase Price`) as `PurchasePrice`,
+                    SUM(cs.`Staff Comission`) as `StaffComission`,
+                    SUM(cs.`Salable Price` - cs.`Purchase Price` - cs.`Staff Comission`) as `Net Profit`,
+                    COUNT(cp.`Product Name`) - COUNT(cs.`Product Name`) as `InStockCount`,
+                    SUM(cp.`Product Purchase Price`) - COALESCE(SUM(cs.`Purchase Price`),0) as `InStockValue`,
+                    COALESCE(billPaid.totalPaidCount, 0) AS `totalPaidCount`,
+                    COALESCE(billPaid.TotalPaidAmount, 0) AS `TotalPaidAmount`
+                    FROM
+                    `consumer_product` cp
+                    LEFT JOIN (
+                     SELECT
+                     `Distributor Name`,
+                        `Product ID`,
+                        `Soldout Date`,
+                        `Salable Price`,
+                        `Purchase Price`,
+                        `Staff Comission`
+                    FROM `consumer_soldout` 
+                    WHERE `Soldout Date` BETWEEN '$from' AND '$to'
+                    UNION
+                    SELECT      
+                    `Distributor Name` ,                  
+                        `Product Code`,
+                        `Transfer Date`,
+                        `Product Purchase Price`,
+                        `Check Amount`,
+                        0 as `Staff Comission`                                             
+                   FROM `consumer_trans_this`
+                    WHERE `Transfer Date` BETWEEN '$from' AND '$to' 
+                    ) as tms ON cp.`Recieved ID` = tms.`Product ID`
+                   LEFT JOIN
+                    (SELECT `Branch name`,`Product ID`,`Salable Price`,`Purchase Price`,`Staff Comission`,`Distributor Name`,`Product Name`
+                    FROM consumer_soldout WHERE `Soldout Date` BETWEEN '2019-01-01' AND '$to'
+                    UNION
+                    SELECT `Transfer From Branch`,`Product Code`,`Product Purchase Price`,`Check Amount`, 0 as `Staff Comission`,`Distributor Name`,`Product Category`
+                    FROM `consumer_trans_this` 
+                    WHERE `Transfer Date` BETWEEN '2019-01-01' AND '$to') as cs 
+                    ON cp.`Recieved ID` = cs.`Product ID`
+                    LEFT JOIN
+                    (
+                    SELECT
+                        co.`Product Name`,
+                        co.`Branch name`,
+                        SUM(CASE WHEN co.`bill pay` = 'paid' THEN co.`Received Quantity` ELSE 0 END) AS totalPaidCount,
+                        SUM(bp.Paid_Amount) AS TotalPaidAmount
+                    FROM
+                        `consumer_order` co
+                    LEFT JOIN
+                        `consumer_bill_paid` bp ON co.`Order ID` = bp.`Order_Code`
+                        WHERE co.`Distributor Name`='$distributorName'
+                    GROUP BY
+                        co.`Product Name`, co.`Branch name`
 
-
+                    ) AS billPaid ON cp.`Branch name` = billPaid.`Branch name` AND cp.`Product Name` = billPaid.`Product Name`
+                    WHERE cp.`Branch name` = '$branchName'
+                                AND cp.`Product Name` = '$productName' and cp.`Distributor Name`='$distributorName'";
+                    //FETCH DATA FROM DB            
                     $result2 = mysqli_query($this->dbConnect, $sql);
-
+                    // echo $sql;
                     if (!$result2) {
                         // Handle database query error
                         return;
@@ -1463,38 +1265,65 @@ class Branch extends dbConfig
                     $row2 = mysqli_fetch_assoc($result2);
                     $categoryCount += $row2['Product_Count'];
                     $categoryPrice += $row2['Purchase_Value'];
+
+                    $categoryCmSalesCount += $row2['cmSalesCount'];
+                    $categoryCmSalesPrice += $row2['cmSalesPrice'];
+                    $categoryCmPurchasePrice += $row2['cmPurchasePrice'];
+                    $categoryCmStaffComission += $row2['cmStaffComission'];
+                    $categoryCmNetProfit += $row2['cmNet Profit'];
+
                     $categorySalesCount += $row2['SalesCount'];
                     $categorySalesPrice += $row2['SalesPrice'];
                     $categoryPurchasePrice += $row2['PurchasePrice'];
                     $categoryStaffComission += $row2['StaffComission'];
                     $categoryNetProfit += $row2['Net Profit'];
+
                     $categoryInStockCount += $row2['InStockCount'];
                     $categoryInStockValue += $row2['InStockValue'];
+
                     $categoryPaidCount += $row2['totalPaidCount'];
                     $categoryPaidValue += $row2['TotalPaidAmount'];
                     // Update branch totals
                     if (!isset($branchCounts[$category])) {
                         $branchCounts[$category] = 0;
                         $branchPrices[$category] = 0;
+
+                        $branchCmSalesCounts[$category] = 0;
+                        $branchCmSalesPrices[$category] = 0;
+                        $branchCmPurchasePrices[$category] = 0;
+                        $branchCmStaffCommissions[$category] = 0;
+                        $branchCmNetProfits[$category] = 0;
+
                         $branchSalesCounts[$category] = 0;
                         $branchSalesPrices[$category] = 0;
                         $branchPurchasePrices[$category] = 0;
                         $branchStaffCommissions[$category] = 0;
                         $branchNetProfits[$category] = 0;
+
                         $branchInStockCounts[$category] = 0;
                         $branchInStockValues[$category] = 0;
+
                         $branchPaidCounts[$category] = 0;
                         $branchPaidValues[$category] = 0;
                     }
                     $branchCounts[$category] += $row2['Product_Count'];
                     $branchPrices[$category] += $row2['Purchase_Value'];
+
+                    $branchCmSalesCounts[$category] += $row2['cmSalesCount'];
+                    $branchCmSalesPrices[$category] += $row2['cmSalesPrice'];
+                    $branchCmPurchasePrices[$category] += $row2['cmPurchasePrice'];
+                    $branchCmStaffCommissions[$category] += $row2['cmStaffComission'];
+                    $branchCmNetProfits[$category] += $row2['cmNet Profit'];
+
                     $branchSalesCounts[$category] += $row2['SalesCount'];
                     $branchSalesPrices[$category] += $row2['SalesPrice'];
                     $branchPurchasePrices[$category] += $row2['PurchasePrice'];
                     $branchStaffCommissions[$category] += $row2['StaffComission'];
                     $branchNetProfits[$category] += $row2['Net Profit'];
+
                     $branchInStockCounts[$category] += $row2['InStockCount'];
                     $branchInStockValues[$category] += $row2['InStockValue'];
+
                     $branchPaidCounts[$category] += $row2['totalPaidCount'];
                     $branchPaidValues[$category] += $row2['TotalPaidAmount'];
 
@@ -1502,96 +1331,272 @@ class Branch extends dbConfig
                     if (!isset($totalCounts[$category])) {
                         $totalCounts[$category] = 0;
                         $totalPrices[$category] = 0;
+
+                        $totalCmSalesCounts[$category] = 0;
+                        $totalCmSalesPrices[$category] = 0;
+                        $totalCmPurchasePrices[$category] = 0;
+                        $totalCmStaffCommissions[$category] = 0;
+                        $totalCmNetProfits[$category] = 0;
+
                         $totalSalesCounts[$category] = 0;
                         $totalSalesPrices[$category] = 0;
                         $totalPurchasePrices[$category] = 0;
                         $totalStaffCommissions[$category] = 0;
                         $totalNetProfits[$category] = 0;
+
                         $totalInStockCounts[$category] = 0;
                         $totalInStockValues[$category] = 0;
+
                         $totalPaidCounts[$category] = 0;
                         $totalPaidValues[$category] = 0;
                     }
                     $totalCounts[$category] += $row2['Product_Count'];
                     $totalPrices[$category] += $row2['Purchase_Value'];
+
+                    $totalCmSalesCounts[$category] += $row2['cmSalesCount'];
+                    $totalCmSalesPrices[$category] += $row2['cmSalesPrice'];
+                    $totalCmPurchasePrices[$category] += $row2['cmPurchasePrice'];
+                    $totalCmStaffCommissions[$category] += $row2['cmStaffComission'];
+                    $totalCmNetProfits[$category] += $row2['cmNet Profit'];
+
                     $totalSalesCounts[$category] += $row2['SalesCount'];
                     $totalSalesPrices[$category] += $row2['SalesPrice'];
                     $totalPurchasePrices[$category] += $row2['PurchasePrice'];
                     $totalStaffCommissions[$category] += $row2['StaffComission'];
                     $totalNetProfits[$category] += $row2['Net Profit'];
+
                     $totalInStockCounts[$category] += $row2['InStockCount'];
                     $totalInStockValues[$category] += $row2['InStockValue'];
+
                     $totalPaidCounts[$category] += $row2['totalPaidCount'];
                     $totalPaidValues[$category] += $row2['TotalPaidAmount'];
                 }
 
                 // Append category data to branchData array
                 $branchData[$branchName][$category]['count'] = $categoryCount;
+                $branchData[$branchName][$category]['count'] = $categoryCount;
+
                 $branchData[$branchName][$category]['price'] = $categoryPrice;
+
+
+                $branchData[$branchName][$category]['cmsalesCount'] = $categoryCmSalesCount;
+                $branchData[$branchName][$category]['cmsalesPrice'] = $categoryCmSalesPrice;
+                $branchData[$branchName][$category]['cmpurchasePrice'] = $categoryCmPurchasePrice;
+                $branchData[$branchName][$category]['cmstaffComission'] = $categoryCmStaffComission;
+                $branchData[$branchName][$category]['cmnetProfit'] = $categoryCmNetProfit;
+
+
                 $branchData[$branchName][$category]['salesCount'] = $categorySalesCount;
                 $branchData[$branchName][$category]['salesPrice'] = $categorySalesPrice;
                 $branchData[$branchName][$category]['purchasePrice'] = $categoryPurchasePrice;
                 $branchData[$branchName][$category]['staffComission'] = $categoryStaffComission;
                 $branchData[$branchName][$category]['netProfit'] = $categoryNetProfit;
+
                 $branchData[$branchName][$category]['inStockCount'] = $categoryInStockCount;
                 $branchData[$branchName][$category]['inStockValue'] = $categoryInStockValue;
+
                 $branchData[$branchName][$category]['paidCount'] = $categoryPaidCount;
                 $branchData[$branchName][$category]['paidValue'] = $categoryPaidValue;
             }
+
             // Append branch data to the HTML table
             $html .= "<tr>";
             $html .= "<td class='border border-black px-1' rowspan='7'>" . count($branchData) . "</td>";
             $html .= "<td class='border border-black px-1' rowspan='7'>$branchName</td>";
+
             $html .= "</tr>";
+            // Initialize branch-level subtotals for each branch
+            $branchSubtotalCounts = 0;
+            $branchSubtotalPrices = 0;
+
+            $branchSubtotalCmSalesCounts = 0;
+            $branchSubtotalCmSalesPrices = 0;
+            $branchSubtotalCmPurchasePrices = 0;
+            $branchSubtotalCmStaffCommissions = 0;
+            $branchSubtotalCmNetProfits = 0;
+
+            $branchSubtotalSalesCounts = 0;
+            $branchSubtotalSalesPrices = 0;
+            $branchSubtotalPurchasePrices = 0;
+            $branchSubtotalStaffCommissions = 0;
+            $branchSubtotalNetProfits = 0;
+
+            $branchSubtotalInStockCounts = 0;
+            $branchSubtotalInStockValues = 0;
+
+            $branchSubtotalPaidCounts = 0;
+            $branchSubtotalPaidValues = 0;
 
             foreach ($branchData[$branchName] as $category => $data) {
+
+                //grand total calculation
+                $GrandTotalCounts += $data['count'];
+                $GrandTotalPrices += $data['price'];
+
+                $GrandTotalCmSalesCounts += $data['cmsalesCount'];
+                $GrandTotalCmSalesPrices += $data['cmsalesPrice'];
+                $GrandTotalCmPurchasePrices += $data['cmpurchasePrice'];
+                $GrandTotalCmStaffCommissions += $data['cmstaffComission'];
+                $GrandTotalCmNetProfits += $data['cmnetProfit'];
+
+                $GrandTotalSalesCounts += $data['salesCount'];
+                $GrandTotalSalesPrices += $data['salesPrice'];
+                $GrandTotalPurchasePrices += $data['purchasePrice'];
+                $GrandTotalStaffCommissions += $data['staffComission'];
+                $GrandTotalNetProfits += $data['netProfit'];
+
+                $GrandTotalInStockCounts += $data['inStockCount'];
+                $GrandTotalInStockValues += $data['inStockValue'];
+
+                $GrandTotalPaidCounts += $data['paidCount'];
+                $GrandTotalPaidValues += $data['paidValue'];
+
+                //sub total  calculation
+                $branchSubtotalCounts += $data['count'];
+                $branchSubtotalPrices += $data['price'];
+
+                $branchSubtotalCmSalesCounts += $data['cmsalesCount'];
+                $branchSubtotalCmSalesPrices += $data['cmsalesPrice'];
+                $branchSubtotalCmPurchasePrices += $data['cmpurchasePrice'];
+                $branchSubtotalCmStaffCommissions += $data['cmstaffComission'];
+                $branchSubtotalCmNetProfits += $data['cmnetProfit'];
+
+                $branchSubtotalSalesCounts += $data['salesCount'];
+                $branchSubtotalSalesPrices += $data['salesPrice'];
+                $branchSubtotalPurchasePrices += $data['purchasePrice'];
+                $branchSubtotalStaffCommissions += $data['staffComission'];
+                $branchSubtotalNetProfits += $data['netProfit'];
+
+                $branchSubtotalInStockCounts += $data['inStockCount'];
+                $branchSubtotalInStockValues += $data['inStockValue'];
+
+                $branchSubtotalPaidCounts += $data['paidCount'];
+                $branchSubtotalPaidValues += $data['paidValue'];
+
+                $html .= "<tr>";
                 $html .= "<td class='border border-black px-1'>$category</td>";
-                $html .= "<td class='border border-black px-1'>{$data['count']}</td>";
-                $html .= "<td class='border border-black px-1'>{$data['price']}</td>";
-                $html .= "<td class='border border-black px-1' colspan='5'></td>"; // Empty columns
-                $html .= "<td class='border border-black px-1'>{$data['salesCount']}</td>";
-                $html .= "<td class='border border-black px-1'>{$data['salesPrice']}</td>";
-                $html .= "<td class='border border-black px-1'>{$data['purchasePrice']}</td>";
-                $html .= "<td class='border border-black px-1'>{$data['staffComission']}</td>";
-                $html .= "<td class='border border-black px-1'>{$data['netProfit']}</td>";
-                $html .= "<td class='border border-black px-1'>{$data['inStockCount']}</td>";
-                $html .= "<td class='border border-black px-1'>{$data['inStockValue']}</td>";
-                $html .= "<td class='border border-black px-1'>{$data['paidCount']}</td>";
-                $html .= "<td class='border border-black px-1'>{$data['paidValue']}</td>";
+
+                $html .= "<td class='border border-black text-center px-1'>{$data['count']}</td>";
+                $html .= "<td class='border border-black text-center px-1'>{$data['price']}</td>";
+
+                // $html .= "<td class='border border-black text-center px-1' colspan='5'></td>"; // Empty columns
+                $html .= "<td class='border border-black text-center px-1'>{$data['cmsalesCount']}</td>";
+                $html .= "<td class='border border-black text-center px-1'>{$data['cmsalesPrice']}</td>";
+                $html .= "<td class='border border-black text-center px-1'>{$data['cmpurchasePrice']}</td>";
+                $html .= "<td class='border border-black text-center px-1'>{$data['cmstaffComission']}</td>";
+                $html .= "<td class='border border-black text-center px-1'>{$data['cmnetProfit']}</td>";
+
+                $html .= "<td class='border border-black text-center px-1'>{$data['salesCount']}</td>";
+                $html .= "<td class='border border-black text-center px-1'>{$data['salesPrice']}</td>";
+                $html .= "<td class='border border-black text-center px-1'>{$data['purchasePrice']}</td>";
+                $html .= "<td class='border border-black text-center px-1'>{$data['staffComission']}</td>";
+                $html .= "<td class='border border-black text-center px-1'>{$data['netProfit']}</td>";
+
+                $html .= "<td class='border border-black text-center px-1'>{$data['inStockCount']}</td>";
+                $html .= "<td class='border border-black text-center px-1'>{$data['inStockValue']}</td>";
+
+                $html .= "<td class='border border-black text-center px-1'>{$data['paidCount']}</td>";
+                $html .= "<td class='border border-black text-center px-1'>{$data['paidValue']}</td>";
+                $html .= "<td class='border border-black text-center px-1'></td>";
                 $html .= "</tr>";
             }
+            // Display branch subtotals at the end of the row
+            $html .= "<tr class='bg-blue-400'>";
+
+            $html .= "<th class='border border-black' colspan='3'>Sub Total</th>";
+
+            $html .= "<th class='border border-black'>$branchSubtotalCounts</th>";
+            $html .= "<th class='border border-black'>$branchSubtotalPrices</th>";
+
+            $html .= "<th class='border border-black'>$branchSubtotalCmSalesCounts</th>";
+            $html .= "<th class='border border-black'>$branchSubtotalCmSalesPrices</th>";
+            $html .= "<th class='border border-black'>$branchSubtotalCmPurchasePrices</th>";
+            $html .= "<th class='border border-black'>$branchSubtotalCmStaffCommissions</th>";
+            $html .= "<th class='border border-black'>$branchSubtotalCmNetProfits</th>";
+
+            $html .= "<th class='border border-black'>$branchSubtotalSalesCounts</th>";
+            $html .= "<th class='border border-black'>$branchSubtotalSalesPrices</th>";
+            $html .= "<th class='border border-black'>$branchSubtotalPurchasePrices</th>";
+            $html .= "<th class='border border-black'>$branchSubtotalStaffCommissions</th>";
+            $html .= "<th class='border border-black'>$branchSubtotalNetProfits</th>";
+
+            $html .= "<th class='border border-black'>$branchSubtotalInStockCounts</th>";
+            $html .= "<th class='border border-black'>$branchSubtotalInStockValues</th>";
+
+            $html .= "<th class='border border-black'>$branchSubtotalPaidCounts</th>";
+            $html .= "<th class='border border-black'>$branchSubtotalPaidValues</th>";
+            $html .= "<th class='border border-black'></th>";
+
+
+            $html .= "</tr>";
         }
 
 
 
         // ... (Append Grand Total row here)
         $html .= "<tr>";
-        $html .= "<td class='border border-black px-1' colspan='2' rowspan='7'>Grand Total</td>";
+
+        $html .= "<td class='border border-black px-1 text-center rotate-2' colspan='2' rowspan='7'> Zone Total</td>";
         $html .= "</tr>";
         foreach ($products as $category => $productNames) {
             $html .= "<tr>";
+
             $html .= "<td class='border border-black px-1'>$category</td>";
 
-            $html .= "<td class='border border-black px-1'>{$totalCounts[$category]}</td>";
-            $html .= "<td class='border border-black px-1'>{$totalPrices[$category]}</td>";
-            $html .= "<td class='border border-black px-1' colspan='5'></td>";
-            $html .= "<td class='border border-black px-1'>{$totalSalesCounts[$category]}</td>";
-            $html .= "<td class='border border-black px-1'>{$totalSalesPrices[$category]}</td>";
-            $html .= "<td class='border border-black px-1'>{$totalPurchasePrices[$category]}</td>";
-            $html .= "<td class='border border-black px-1'>{$totalStaffCommissions[$category]}</td>";
-            $html .= "<td class='border border-black px-1'>{$totalNetProfits[$category]}</td>";
-            $html .= "<td class='border border-black px-1'>{$totalInStockCounts[$category]}</td>";
-            $html .= "<td class='border border-black px-1'>{$totalInStockValues[$category]}</td>";
-            $html .= "<td class='border border-black px-1'>{$totalPaidCounts[$category]}</td>";
-            $html .= "<td class='border border-black px-1'>{$totalPaidValues[$category]}</td>";
+            $html .= "<td class='border border-black text-center px-1'>{$totalCounts[$category]}</td>";
+            $html .= "<td class='border border-black text-center px-1'>{$totalPrices[$category]}</td>";
+
+            // $html .= "<td class='border border-black text-center px-1' colspan='5'></td>";
+
+            $html .= "<td class='border border-black text-center px-1'>{$totalCmSalesCounts[$category]}</td>";
+            $html .= "<td class='border border-black text-center px-1'>{$totalCmSalesPrices[$category]}</td>";
+            $html .= "<td class='border border-black text-center px-1'>{$totalCmPurchasePrices[$category]}</td>";
+            $html .= "<td class='border border-black text-center px-1'>{$totalCmStaffCommissions[$category]}</td>";
+            $html .= "<td class='border border-black text-center px-1'>{$totalCmNetProfits[$category]}</td>";
+
+            $html .= "<td class='border border-black text-center px-1'>{$totalSalesCounts[$category]}</td>";
+            $html .= "<td class='border border-black text-center px-1'>{$totalSalesPrices[$category]}</td>";
+            $html .= "<td class='border border-black text-center px-1'>{$totalPurchasePrices[$category]}</td>";
+            $html .= "<td class='border border-black text-center px-1'>{$totalStaffCommissions[$category]}</td>";
+            $html .= "<td class='border border-black text-center px-1'>{$totalNetProfits[$category]}</td>";
+
+            $html .= "<td class='border border-black text-center px-1'>{$totalInStockCounts[$category]}</td>";
+            $html .= "<td class='border border-black text-center px-1'>{$totalInStockValues[$category]}</td>";
+
+            $html .= "<td class='border border-black text-center px-1'>{$totalPaidCounts[$category]}</td>";
+            $html .= "<td class='border border-black text-center px-1'>{$totalPaidValues[$category]}</td>";
+            $html .= "<td class='border border-black text-center px-1'></td>";
             $html .= "</tr>";
             $html .= "</tr>"; // Empty columns
         }
+        $html .= "<tr class='bg-blue-400 -400'>
+        <th class='border border-black ' colspan='3'>Grand Total</th>
+        <th class='border border-black ' colspan=''>{$GrandTotalCounts}</th>
+        <th class='border border-black ' colspan=''>{$GrandTotalPrices}</th>
 
+        <th class='border border-black ' colspan=''>{$GrandTotalCmSalesCounts}</th>
+        <th class='border border-black ' colspan=''>{$GrandTotalCmSalesPrices}</th>
+        <th class='border border-black ' colspan=''>{$GrandTotalCmPurchasePrices}</th>
+        <th class='border border-black ' colspan=''>{$GrandTotalCmStaffCommissions}</th>
+        <th class='border border-black ' colspan=''>{$GrandTotalCmNetProfits}</th>
+
+        <th class='border border-black ' colspan=''>{$GrandTotalSalesCounts}</th>
+        <th class='border border-black ' colspan=''>{$GrandTotalSalesPrices}</th>
+        <th class='border border-black ' colspan=''>{$GrandTotalCmPurchasePrices}</th>
+        <th class='border border-black ' colspan=''>{$GrandTotalStaffCommissions}</th>
+        <th class='border border-black ' colspan=''>{$GrandTotalNetProfits}</th>
+
+        <th class='border border-black ' colspan=''>{$GrandTotalInStockCounts}</th>
+        <th class='border border-black ' colspan=''>{$GrandTotalInStockValues}</th>
+
+        <th class='border border-black ' colspan=''>{$GrandTotalPaidCounts}</th>
+        <th class='border border-black ' colspan=''>{$GrandTotalPaidValues}</th>
+        <th class='border border-black ' colspan=''></td>
+        </tr>";
         // Close the table HTML
         $html .= '</table>';
 
-        // print_r($branchData);
+        // print_r($branchData['Badda']);
         // Return the generated HTML
         return $html;
     }
